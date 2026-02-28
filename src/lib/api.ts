@@ -26,7 +26,7 @@ export async function signUpUser(user: INewUser) {
     throw new Error("User creation failed");
   }
 
-  return { success: true, data };
+  return { success: true, data ,error:"some thing went wrong" };
 }
 
 
@@ -34,17 +34,16 @@ export async function signUpUser(user: INewUser) {
 
 export async function signInUser(user: ISignInUser) {
     try {
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { data } = await supabase.auth.signInWithPassword({
             email: user.email,
             password: user.password,
         });
         
-        console.log(data.user.id)
 
         const { data: profile, error: profileError } = await supabase
             .from("profile")
             .select("*")
-            .eq("id", data.user.id)
+            .eq("id", data.user?.id)
             .single();
 
         if (profileError || !profile) {

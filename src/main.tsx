@@ -10,7 +10,7 @@ import { Toaster } from "sonner"
 createRoot(document.getElementById('root')!).render(
   <Provider store={appStore}>
     <StrictMode>  
-      <BrowserRouter>
+      <BrowserRouter basename="/chat-app">
         <App />
         <Toaster position="top-right" richColors />
       </BrowserRouter>

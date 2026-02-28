@@ -5,6 +5,7 @@ import path from "path"
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: "/chat-app/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -15,4 +16,5 @@ export default defineConfig({
       "@types": path.resolve(__dirname, "./src/types"),
     },
   },
+  
 })

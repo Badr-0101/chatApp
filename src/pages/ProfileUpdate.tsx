@@ -15,7 +15,7 @@ const ProfileUpdate = () => {
 
   const navigate = useNavigate()
   const {id} = useAppSelector((state) => state.auth)
-  const [imagePreview, setImagePreview] = useState<string | null>(null)
+  const [imagePreview, setImagePreview] = useState<string |undefined>()
   const [bio, setBio] = useState("")
   const [status, setStatus] = useState<RequestStatus>("idle")
 
@@ -31,7 +31,7 @@ const ProfileUpdate = () => {
    
       const {data, error} = await getUserProfile(id)
       if(error){
-        toast.error(error.message)
+        toast.error(error)
         setStatus("error")
         return
       }

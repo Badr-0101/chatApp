@@ -19,7 +19,7 @@ const Chat = () => {
           <ChatBox chatData={currentChat} currentUserId={currentUserId || null} />
         </div>
         
-        <RightSideBar personHowUserChat={currentChat?.user} />
+        <RightSideBar personHowUserChat={currentChat?.user || null} />
         </div>
       </div>
       

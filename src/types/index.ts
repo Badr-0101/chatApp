@@ -30,7 +30,6 @@ export interface IMessage {
     conversation_id: string;
     sender_id: string;
     message_text: string;
-    sent_at: string;
 }
 
 export interface IChatData {

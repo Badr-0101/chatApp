@@ -40,8 +40,8 @@ const SignInForm = () => {
         
             navigate("/");
          } else {
-           console.error(result.error);
-           setErrorMessage(result.error);
+    
+           setErrorMessage(result.error||null);
            }
          setIsLoading(false);
     }
