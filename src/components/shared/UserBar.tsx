@@ -37,7 +37,7 @@ const UserBar = ({ chatData }: ChatBoxProps) => {
                         <Button 
                             variant="ghost" 
                             size="icon" 
-                            className="hover:bg-transparent cursor-pointer  "
+                            className="hover:bg-transparent cursor-pointer hover:bg-blue-500 "
                             aria-label="Menu options"
                             onClick={() => dispatch(toggleSidebar())}
 
@@ -50,7 +50,7 @@ const UserBar = ({ chatData }: ChatBoxProps) => {
                     <Button 
                         variant="ghost" 
                         size="icon" 
-                        className="hover:bg-transparent relative "
+                        className=" relative hover:bg-blue-500 "
                         aria-label="Menu options"
                         onClick={handleMenuOpen}
                     >
