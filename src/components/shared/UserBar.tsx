@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Button } from "../ui/button";
@@ -14,6 +14,7 @@ import { toggleSidebar } from "@/store/styleSlice";
 import type { ChatBoxProps } from "@/types";
 
 const UserBar = ({ chatData }: ChatBoxProps) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const handleLogout = async () => {
@@ -22,6 +23,9 @@ const UserBar = ({ chatData }: ChatBoxProps) => {
         dispatch(clearChat());
         navigate('/signin');
         
+    };
+    const handleMenuOpen = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
     return (
         <div>
@@ -46,11 +50,12 @@ const UserBar = ({ chatData }: ChatBoxProps) => {
                     <Button 
                         variant="ghost" 
                         size="icon" 
-                        className="hover:bg-transparent relative group"
+                        className="hover:bg-transparent relative "
                         aria-label="Menu options"
+                        onClick={handleMenuOpen}
                     >
                         <HiOutlineDotsVertical color="white" size={24} />
-                        <div className='absolute top-7 right-0 flex group-hover:flex flex-col gap-2 bg-white hidden transition-all duration-300 ease-in-out p-2 rounded-lg shadow-lg z-10'>
+                        <div className={`absolute top-7 right-0 flex ${isMenuOpen ? "flex" : "hidden"} flex-col gap-2 bg-white transition-all duration-300 ease-in-out p-2 rounded-lg shadow-lg z-10`}>
                             <div 
                                 onClick={() => navigate('/profile-update')}
                                 className="cursor-pointer bg-white hover:bg-gray-200 p-2 text-center rounded-md text-black transition-colors"

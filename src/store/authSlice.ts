@@ -5,9 +5,9 @@ import type { ICurentUser } from '@/types';
 
 
 const initialState: ICurentUser = {
-  id: "",
-  email: "",
-  access_token: "",
+  id: null,
+  email: null,
+  access_token: null,
 };
 
 const authSlice = createSlice({
@@ -21,9 +21,9 @@ const authSlice = createSlice({
 
     },
     logout: (state) => {
-      state.id = "";
-      state.email = "";
-      state.access_token = "";
+      state.id = null;
+      state.email = null;
+      state.access_token = null;
     },
   },
 });

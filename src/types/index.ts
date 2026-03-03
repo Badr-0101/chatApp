@@ -20,9 +20,9 @@ export interface IprofileData {
     updated_at: string;
 }
 export interface ICurentUser {
-    id: string;
-    email: string;
-    access_token: string;
+    id: string | null;
+    email: string | null;
+    access_token: string | null;
 }
 export interface IMessage {
     message_id: string;
