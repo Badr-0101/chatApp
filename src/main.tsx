@@ -4,10 +4,9 @@ import './index.css'
 import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { appStore } from './store/store'
+import { appStore,appPersistor } from './store/store'
 import { Toaster } from "sonner"
 import { PersistGate } from 'redux-persist/integration/react'
-import { appPersistor } from './store/store'
 createRoot(document.getElementById('root')!).render(
   <Provider store={appStore}>
     <StrictMode>  
