@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')!).render(
   <Provider store={appStore}>
     <StrictMode>  
       <PersistGate loading={null} persistor={appPersistor}>
-      <BrowserRouter basename="/chatApp">
+      <BrowserRouter>
         <App />
         <Toaster position="top-right" richColors />
       </BrowserRouter>
