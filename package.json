@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://badr-0101.github.io/chat-app",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",

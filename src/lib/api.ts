@@ -114,9 +114,11 @@ export async function createProfile(userId: string, profileData: IProfile) {
     }
 }
 
-export async function updateProfile(userId: string, profileData: IProfile) {
-    console.log(userId)
+export async function updateProfile(userId: string | null, profileData: IProfile) {
     try {
+        if (!userId) {
+            return { success: false, error: "something went wrong please try again later" };
+        }
         const { data, error } = await supabase
             .from("profile")
             .update({
